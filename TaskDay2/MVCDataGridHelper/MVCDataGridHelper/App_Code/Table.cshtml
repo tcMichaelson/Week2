@@ -1,0 +1,15 @@
+﻿@helper DataGrid(IEnumerable<string> data) {
+<table>
+
+    @foreach (var item in data) {
+        <tr>
+            <td style="border: 1px solid black;">
+                @item
+            </td>
+        </tr>
+
+    }
+
+   
+</table>
+}

@@ -1,0 +1,27 @@
+﻿@model ShoppingListVM.Models.ShoppingCartAllCustomersViewModel
+@{
+    ViewBag.Title = "ShowAllCarts";
+}
+
+<h2>ShowAllCarts</h2>
+<table>
+@{
+    foreach (var cust in Model.AllCustomers) {
+        <tr>
+            <th>
+                <td><h2>@cust.FirstName @cust.LastName's Cart</h2></td>
+            </th>
+        </tr>
+        var totalPrice = 0.00m;
+        foreach (var prod in Model.AllProdcuts) {
+            <tr>
+                <td>@prod.Name</td>
+                <td>@String.Format("{0}:c", prod.Price)</td>
+            </tr>
+            totalPrice += prod.Price;
+        }
+        <tr><td>@String.Format("{0}:c",totalPrice)</td></tr>
+    }
+}
+</table>
+

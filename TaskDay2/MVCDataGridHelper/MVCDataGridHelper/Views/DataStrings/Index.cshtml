@@ -1,0 +1,13 @@
+﻿@using MVCDataGridHelper.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{ List<string> movieList = new List<string>();
+    movieList.AddRange(new List<string> { "Gladiator", "Jurassic Park", "Forrest Gump" });
+}
+@Table.DataGrid(movieList)
+<br />
+@Html.DataGrid(movieList)
+
