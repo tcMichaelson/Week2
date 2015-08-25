@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form method="post" action="/Customers/Create">
+    <div>
+        <label>
+            Enter First Name:
+            <input type="text" name="FirstName" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Enter Last Name:
+            <input type="text" name="LastName" />
+        </label>
+    </div>
+    <div>
+        <label>Billing Address</label>
+    </div>
+
+    <div>
+        <label>
+            Enter Street:
+            <input type="text" name="BillingAddress.Street" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Enter City:
+            <input type="text" name="BillingAddress.City" />
+        </label>
+    </div>
+    <div>
+        <label>Shipping Address</label>
+    </div>
+    <div>
+        <label>
+            Enter Street:
+            <input type="text" name="ShippingAddress.Street" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Enter City:
+            <input type="text" name="ShippingAddress.City" />
+        </label>
+    </div>
+    <input type="submit" value="Make Me!" />
+</form>
