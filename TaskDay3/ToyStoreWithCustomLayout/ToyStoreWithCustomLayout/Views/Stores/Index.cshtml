@@ -1,0 +1,33 @@
+﻿@model ToyStoreWithCustomLayout.Models.Store
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+
+<div>
+    <h1>Welcome to Our Toy Store Website</h1>
+    @Html.Action("getAd","Banner")
+    <p>We have lots of cool stuff.  See the column to the right for all our toys.</p>
+</div>
+
+@section Aside{
+    <ul class="listToys">
+        <li>@Html.Partial("_FeaturedProduct")</li>
+    @foreach (var toy in Model.AllToys) {
+        <li>
+            <ul>
+                <li>@HImage.Show(toy.imageURL)</li>
+                <li>@toy.Name</li>
+                <li>@toy.Desc</li>
+                <li>@String.Format("{0:c}", toy.Price)</li>
+            </ul>
+        </li>
+    }
+        
+    </ul>
+    }
+
+
+@section Footer{
+    <div>&copy; @DateTime.Now.Year</div>
+    }

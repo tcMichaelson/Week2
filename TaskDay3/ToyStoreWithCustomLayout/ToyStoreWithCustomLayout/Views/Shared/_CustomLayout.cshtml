@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <img class="toylogo" src="~/Content/ToysLogo.jpg" />
+    </header>
+    <div class="col-md-9">
+        @RenderBody()
+    </div>
+    <div class="col-md-3">
+        @RenderSection("Aside")
+    </div>
+    <div>
+        @RenderSection("Footer")
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

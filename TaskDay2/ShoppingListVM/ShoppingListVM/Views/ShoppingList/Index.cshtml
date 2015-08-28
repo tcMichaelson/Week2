@@ -3,6 +3,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
 }
 
 @helper FormatCurrency(decimal price) { 
@@ -22,7 +23,7 @@ if(price < 0) {
     decimal totalPrice = 0.00m;
     foreach (var prod in Model.ProductList) {
         <ul>
-            <li>@prod.Name @Format.Currency(prod.Price)</li>            
+            <li>@prod.Name @Html.DisplayFor(m => prod.Price)</li>
         </ul>
         totalPrice += prod.Price;
     }

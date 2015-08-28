@@ -1,0 +1,13 @@
+﻿@model string
+
+<div class="input-group" style="max-width: 280px;">
+    <span class="input-group-addon">
+        @Html.TextBox("area", ((string)ViewData.TemplateInfo.FormattedModelValue).Substring(0, 3), new { @class = "form-control" })
+    </span>
+    <span class="input-group-addon">
+        @Html.TextBox("next3", ((string)ViewData.TemplateInfo.FormattedModelValue).Substring(3, 3), new { @class = "form-control" })
+    </span>
+    <spac class="input-group-addon">
+        @Html.TextBox("last4", ((string)ViewData.TemplateInfo.FormattedModelValue).Substring(6), new { @class = "form-control" })
+    </spac>
+</div>
